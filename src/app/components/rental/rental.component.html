@@ -1,0 +1,27 @@
+<h4 class="text-center">Kiralamalar</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Araba</th>
+            <th>Müşteri</th>
+            <th>Kiralama Tarihi</th>
+            <th>Teslim Tarihi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rental of rentals">
+            <td>
+                {{rental.carName}}
+            </td>
+            <td>
+                {{rental.companyName}}
+            </td>
+            <td>
+                {{rental.rentDate}}
+            </td>
+            <td>
+                {{rental.returnDate}}
+            </td>
+        </tr>
+    </tbody>
+</table>
