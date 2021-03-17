@@ -8,7 +8,9 @@ import { BrandService } from 'src/app/services/brand/brand.service';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
+  currentBrand:Brand;
   brands:Brand[] = [];
+  x:number = 0;
   constructor(private brandService: BrandService) { }
 
   ngOnInit(): void {
@@ -19,5 +21,16 @@ export class BrandComponent implements OnInit {
     this.brandService.getBrands().subscribe(response=>{
       this.brands = response.data;
     })
+  }
+  setCurrentBrand(brand:Brand){
+    this.currentBrand = brand;
+  }
+  getCurrentBrand(brand:Brand){
+    if(this.currentBrand == brand){
+      return "list-group-item cursor active";
+    }
+    else{
+      return "list-group-item cursor"
+    }
   }
 }

@@ -1,6 +1,9 @@
 <h4 class="text-center">Markalar</h4>
 <ul class="list-group list-group-flush">
-    <li *ngFor="let brand of brands" class="list-group-item">
+    <li (click) = "setCurrentBrand(brand)"
+    routerLink = "/cars/brand/{{brand.brandId}}"
+     *ngFor="let brand of brands" 
+     [class]="getCurrentBrand(brand)">
         {{brand.brandName}}
     </li>
 </ul>
